@@ -29,14 +29,15 @@ The **Gesture Presentation Assistant** is an intelligent system that enables use
   ---
   - #### 4. 🖊 Draw Mode
       Raise the index finger and middle finger to draw points.  
-      ![Draw Mode](media/Draw_Clib.gif)
+      ![Draw Mode](media/Draw_clib.gif)
 
   - #### 5. 🔍 Zoom In/Out
       Raise thumb, index, and middle fingers on both hands and move hands together/apart.  
-      ![Zoom Control](media/Zoom_Clib.gif)
+      ![Zoom Control](media/Zoom_clib.gif)
 
   - #### 6. 🤚 End Slides
-      Raise all fungers to end slides.
+      Raise all fingers to end slides.
+    
       ![End Slides](media/End_clib.gif)
 
 ### 🆕 **Gesture Data Collector**: Catch a new hand desture and add it in the JSON file.
