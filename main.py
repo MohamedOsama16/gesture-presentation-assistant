@@ -10,12 +10,12 @@ from Authentication.authenticator import authenticate_user
 import time
 
 
-auth_face_img_path = 'D:\\Mohamed\\Mohamed Osama\\Gesture Presentation Assistant\\Authentication\\Mohamed_Osama.jpg'  # غيّر المسار لو الصورة في مكان تاني
+auth_face_img_path = 'M:\\Mohamed Osama\\Gesture Presentation Assistant\\Authentication\\Mohamed_Osama.jpg'  # غيّر المسار لو الصورة في مكان تاني
 
 
 # ------------------- Presentation and Camera Settings -------------------
-PRES_DIMS = (1200, 600)  # Presentation slide size
-CAM_DIMS = (250, 250)     # Webcam feed size
+PRES_DIMS = (1250, 700)  # Presentation slide size
+CAM_DIMS = (400, 400)     # Webcam feed size
 
 
 def main():
@@ -23,7 +23,7 @@ def main():
     camera_matrix, dist_coeff = load_calibration('Calibration/calibration_data.npz')
 
     # Load Slides
-    ppt_path = r"D:\\Mohamed\\Mohamed Osama\\Gesture Presentation Assistant\\Gesture Presentation Test.pptx"
+    ppt_path = r"M:\\Mohamed Osama\\Gesture Presentation Assistant\\Gesture Presentation Test.pptx"
     try:
         slides_list = load_slides(ppt_path, PRES_DIMS)
         print(f"Loaded {len(slides_list)} slides")
@@ -166,15 +166,27 @@ def main():
                         landmarks = hands[0]['lmList']
                         index_tip = landmarks[8][:2]
                         p1, p2 = display_mouse_pad(cam, "Draw Pad", 0.3, mpad_color, (cam.shape[1]-200, 0), (200, 150))
+                        
                         if p1[0] < index_tip[0] < p2[0] and p1[1] < index_tip[1] < p2[1]:
                             index_tip_on_slide = map_pointer_to_slide(index_tip, p1, p2[0]-p1[0], p2[1]-p1[1], PRES_DIMS)
-                            cv2.circle(cam, index_tip, 4, annotation_color, 2)
+                            
+                            # Draw a line instead of a circle
+                            if prev_draw_point is not None:
+                                cv2.line(cam, prev_draw_point, index_tip, annotation_color, 2)
+                            
+                            # Update previous point
+                            prev_draw_point = index_tip
+
                             drawings_log.append(index_tip_on_slide)
+
                             current_time = time.time()
                             if not voice_cooldown:
                                 voice_feedback.speak("Draw mode")
                                 voice_cooldown = True
                                 last_voice_time = current_time
+                        else:
+                            prev_draw_point = None  # Reset when finger is outside draw area
+
 
                     elif action == "erase" and allow_gestures:
                         change_slide = False
