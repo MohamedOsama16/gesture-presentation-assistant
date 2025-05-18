@@ -1,0 +1,12 @@
+# Gesture Presentation Assistant - Requirements
+# Install these Python 3.10.11 libraries using: pip install -r requirements.txt
+
+opencv-python         # For camera access and image processing
+numpy                 # For numerical computations
+mediapipe             # For hand gesture detection
+pyttsx3               # For voice feedback
+Pillow                # For image handling
+pyautogui             # For controlling presentation slides
+matplotlib            # For any visualization or plotting needs
+deepface              # For authentication
+
