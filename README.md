@@ -6,34 +6,34 @@ The **Gesture Presentation Assistant** is an intelligent system that enables use
 
 ### 🔐 **Facial Authentication**: 
 #### Secure user login using facial recognition.
-![Facial Authentication](media\Authentication_clib.gif)
+![Facial Authentication](media/Authentication_Clib.gif)
 
 ### ✋ **Gesture Recognition**: 
 #### Detects and interprets hand gestures from the user.
   - #### 1. 👉 Next Slide
       Raise only the pinky finger to navigate to the next slide.  
-      ![Next Slide Gesture](media/Next_action_clib.gif)
+      ![Next Slide Gesture](media/Next_Clib.gif)
 
   ---
 
   - #### 2. 👈 Previous Slide
       Thumb finger up while the rest are down.  
-      ![Previous Slide Gesture](media/Prev_action_clib.gif)
+      ![Previous Slide Gesture](media/Prev_Clib.gif)
 
   ---
 
   - #### 3. 🖱️ Pointer Mode
       Raise the index finger while keeping the rest down to move the mouse cursor.  
-      ![Pointer Mode](media/Piointer_clib.gif)
+      ![Pointer Mode](media/Pointer_Clib.gif)
 
   ---
   - #### 4. 🖊 Draw Mode
       Raise the index finger and middle finger to draw points.  
-      ![Draw Mode](media/Draw_clib.gif)
+      ![Draw Mode](media/Draw_Clib.gif)
 
   - #### 5. 🔍 Zoom In/Out
       Raise thumb, index, and middle fingers on both hands and move hands together/apart.  
-      ![Zoom Control](media/Zoom_clib.gif)
+      ![Zoom Control](media/Zoom_Clib.gif)
 
   - #### 6. 🤚 End Slides
       Raise all fungers to end slides.
